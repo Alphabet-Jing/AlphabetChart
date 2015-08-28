@@ -1,5 +1,10 @@
 package com.alphabet.chartlib.data;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
+
+import com.alphabet.chartlib.utils.ValueFormatter;
+
 import java.util.List;
 
 /**
@@ -41,4 +46,41 @@ public abstract class DataSet<T extends Entry>{
      * 计算区间大小值的结束位置
      */
     protected int mLastEnd = 0;
+
+    /**
+     * 数据集标签，描述当前数据集
+     */
+    protected String mLabel = "DataSet";
+
+    /**
+     * 可见性标志
+     */
+    protected boolean mVisible = true;
+
+    /**
+     * 是否绘制 y 值
+     */
+    protected boolean mDrawValues = true;
+
+    /**
+     * 描述 y 值的文字颜色
+     */
+    protected int mValueColor = Color.BLACK;
+
+    /**
+     * 描述 y 值的文字大小
+     */
+    protected float mValueTextSize = 17f;
+
+    /**
+     * 文字字体
+     */
+    protected Typeface mValueTypeface;
+
+    /**
+     * 格式化数据和文字
+     */
+    protected transient ValueFormatter mValueFormatter;
+
+    // FIXME: 15/8/27 
 }
